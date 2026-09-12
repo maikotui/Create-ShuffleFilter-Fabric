@@ -47,7 +47,7 @@ public class MixinDeployerMovementBehaviour {
         DeployerFakePlayer player = getPlayer(context);
         if (player == null || !player.getMainHandStack().isEmpty()) return;
 
-        Storage<ItemVariant> storage = context.contraption.getSharedInventory();
+        Storage<ItemVariant> storage = context.contraption.getStorage().getAllItems();
         if (storage == null) return;
 
         List<ItemVariant> candidates = new ArrayList<>();
